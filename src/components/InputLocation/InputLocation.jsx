@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
+
 export default function InputLocation() {
+
   const [location, setLocation] = useState("");
 
   const handleOnChange = (event)=> {
@@ -9,7 +11,8 @@ export default function InputLocation() {
 
   const handleOnSubmit = (event)=> {
     event.preventDefault()
-    console.log(location)
+    // console.log(location)
+
   }
   return (
     <div className="my-5 d-flex justify-content-center">

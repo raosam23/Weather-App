@@ -1,19 +1,31 @@
 import React, { useState } from "react";
 
-
 export default function InputLocation() {
+  const hostUrl = "http://localhost:5000";
 
   const [location, setLocation] = useState("");
 
-  const handleOnChange = (event)=> {
-    setLocation(event.target.value)
-  }
+  const handleOnChange = (event) => {
+    setLocation(event.target.value);
+  };
 
-  const handleOnSubmit = (event)=> {
-    event.preventDefault()
+  const handleOnSubmit = async (event) => {
+    event.preventDefault();
     // console.log(location)
-
-  }
+    try {
+      const response = await fetch(`${hostUrl}/weather/getweather`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ location: location }),
+      });
+      const data = await response.json();
+      console.log(JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="my-5 d-flex justify-content-center">
       <form onSubmit={handleOnSubmit}>

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import WeatherContext from "../../context/Weather/WeatherContext";
 
 export default function WeatherCard(props) {
+
+  const context = useContext(WeatherContext)
+  const { error } = context
   const capitalize = (str)=>{
     const capStr = str.charAt(0).toUpperCase() + str.slice(1);
     return capStr
@@ -12,7 +16,7 @@ export default function WeatherCard(props) {
   return (
     <div>
       
-      {(!props.error) && <div className="card mx-auto" style={{width : "18rem"}}>
+      {(!error) && <div className="card mx-auto" style={{width : "18rem"}}>
         <img src={`https://openweathermap.org/img/wn/${weatherImg}@2x.png`} className="card-img mx-auto" alt="Loading..." style={{width : "7rem", height : "7rem"}} />
         <div className="card-body">
           <h2>{place}</h2>

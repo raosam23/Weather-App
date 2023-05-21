@@ -15,14 +15,13 @@ function App() {
     desc : ""
   }
   const [details, setDetails] = useState(initialValues)
-  const [error, setError] = useState(null)
   console.log(details);
   return (
     <div className="App">
       <WeatherState>
       <Title/>
-      <InputLocation setDetails = {setDetails} error = {error} setError = {setError} />
-      {(details!==initialValues) && <WeatherCard details = {details} error = {error} />}
+      <InputLocation setDetails = {setDetails} />
+      {(details!==initialValues) && <WeatherCard details = {details} />}
       </WeatherState>
     </div>
   );

@@ -6,7 +6,7 @@ import Failure from "../Failure/Failure";
 export default function InputLocation(props) {
 
   const context = useContext(WeatherContext)
-  const {fetchWeather} = context;
+  const {fetchWeather, error, setError} = context;
 
   // const [loading, setLoading] = useState(false)
   const [location, setLocation] = useState("");
@@ -33,11 +33,11 @@ export default function InputLocation(props) {
         weatherImg : data.weather[0].icon,
         desc : data.weather[0].description
       })
-      props.setError(null)
+      setError(null)
     }
     catch(err) {
       console.log("This is the error",err)
-      props.setError(err)
+      setError(err)
     }
     setLocation("")
     // console.log(data.main.temp)
@@ -72,7 +72,7 @@ export default function InputLocation(props) {
         </button>
       </form>
     </div>
-    {props.error && <Failure/>}
+    {error && <Failure/>}
     </>
   );
 }

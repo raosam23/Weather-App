@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import WeatherContext from "../../context/Weather/WeatherContext";
+import './WeatherCard.css'
 
 export default function WeatherCard(props) {
 

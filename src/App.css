@@ -1,6 +1,13 @@
-
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url('./images/Blue\ Skies.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -35,5 +42,11 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .some-element {
+    padding: 10px;
   }
 }

@@ -1,15 +1,16 @@
-label h2{
+.card{
+    background-color: #47B5FF;
+}
+
+.card h2 {
     font-family: 'Playfair Display', serif;
+    font-style: italic;
     font-weight: 400;
     color: aliceblue;
 }
 
-input::placeholder{
+.card h5, .card p {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-}
-
-.btnText{
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+    color: aliceblue;
 }

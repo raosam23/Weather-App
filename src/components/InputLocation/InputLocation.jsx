@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 
 import WeatherContext from "../../context/Weather/WeatherContext";
 import Failure from "../Failure/Failure";
+import './InputLocation.css'
 
 export default function InputLocation(props) {
 
@@ -46,7 +47,7 @@ export default function InputLocation(props) {
   
   return (
     <>
-    <div className="my-5 d-flex justify-content-center">
+    <div className="my-5 d-flex justify-content-center" style={{backgroundImage : "none"}}>
       <form onSubmit={handleOnSubmit} autoComplete="off">
         <div className="mb-3">
           <label htmlFor="loc" className="form-label my-3">
@@ -67,8 +68,8 @@ export default function InputLocation(props) {
             autoComplete="false"
           />
         </div>
-        <button type="submit" className="btn btn-primary my-3">
-          Go
+        <button type="submit" className="btn btn-outline-success my-3">
+          <span class = "btnText">Go</span>
         </button>
       </form>
     </div>

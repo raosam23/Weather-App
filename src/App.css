@@ -46,7 +46,7 @@ body{
 }
 
 @media (max-width: 767px) {
-  .some-element {
-    padding: 10px;
+  body {
+    padding: 20px;
   }
 }

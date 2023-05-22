@@ -13,3 +13,8 @@ input::placeholder{
     font-family: 'Playfair Display', serif;
     font-weight: 400;
 }
+
+input{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;  
+}

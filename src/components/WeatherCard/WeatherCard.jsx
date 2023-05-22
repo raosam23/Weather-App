@@ -17,15 +17,15 @@ export default function WeatherCard(props) {
   return (
     <div>
       
-      {(!error) && <div className="card mx-auto" style={{width : "18rem"}}>
-        <img src={`https://openweathermap.org/img/wn/${weatherImg}@2x.png`} className="card-img mx-auto" alt="Loading..." style={{width : "7rem", height : "7rem"}} />
+      {(!error) && <div className="card mx-auto">
+        <img src={`https://openweathermap.org/img/wn/${weatherImg}@2x.png`} className="card-img mx-auto" alt="Loading..." />
+        <p className="card-text">
+            {capDesc}
+          </p>
         <div className="card-body">
           <h2>{place}</h2>
           <h5 className="card-title">{`Temperature : ${temperature}℃`}</h5>
           <h5 className="card-title">{`Humidity : ${humidity}%`}</h5>
-          <p className="card-text">
-            {capDesc}
-          </p>
         </div>
       </div>}
       </div>

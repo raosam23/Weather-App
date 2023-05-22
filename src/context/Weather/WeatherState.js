@@ -5,6 +5,7 @@ import WeatherContext from "./WeatherContext";
 const WeatherState = (props) => {
   const hostURL = "http://localhost:5000";
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const fetchWeather = async (location) => {
     try{
@@ -26,7 +27,7 @@ const WeatherState = (props) => {
 
   
   return (
-    <WeatherContext.Provider value={{ fetchWeather, error, setError }}>
+    <WeatherContext.Provider value={{ fetchWeather, error, setError, loading, setLoading }}>
       {props.children}
     </WeatherContext.Provider>
   );

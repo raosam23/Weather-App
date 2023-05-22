@@ -3,11 +3,12 @@ import React, { useState, useContext } from "react";
 import WeatherContext from "../../context/Weather/WeatherContext";
 import Failure from "../Failure/Failure";
 import './InputLocation.css'
+import Spinner from "../Spinner/Spinner";
 
 export default function InputLocation(props) {
 
   const context = useContext(WeatherContext)
-  const {fetchWeather, error, setError} = context;
+  const {fetchWeather, error, setError, loading, setLoading} = context;
 
   // const [loading, setLoading] = useState(false)
   const [location, setLocation] = useState("");
@@ -23,8 +24,10 @@ export default function InputLocation(props) {
     console.log(location)
     // setLoading(true)
     try{
+      setLoading(true)
       const data = await fetchWeather(location)
       console.log(data)
+      setLoading(false)
       // setLoading(false)
       // console.log(data)
       props.setDetails({
@@ -73,7 +76,8 @@ export default function InputLocation(props) {
         </button>
       </form>
     </div>
-    {error && <Failure/>}
+    {loading && <Spinner/>}
+    {(error && !loading) && <Failure/>}
     </>
   );
 }

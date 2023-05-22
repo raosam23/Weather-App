@@ -5,25 +5,38 @@ import './WeatherCard.css'
 export default function WeatherCard(props) {
 
   const context = useContext(WeatherContext)
-  const { error } = context
+  const { error, loading } = context
   const capitalize = (str)=>{
     const capStr = str.charAt(0).toUpperCase() + str.slice(1);
     return capStr
   }
+  const capitalizeCity = (str) => {
+    let resultingStr = '';
+    str.split(' ').forEach((s, index) => {
+      resultingStr = resultingStr.concat(s.toLowerCase()[0].toUpperCase() + s.toLowerCase().slice(1));
+      if (index !== str.split(' ').length - 1) {
+        resultingStr = resultingStr.concat(' ');
+      }
+    });
+    return resultingStr;
+  };
   const { place, temperature,humidity, weatherImg, desc } = props.details
   const capDesc = capitalize(desc)
-  console.log(props.details)
+  const capPlace = capitalizeCity(place)
+  // console.log(props.details)
+  // console.log(loading)
+
 
   return (
     <div>
       
-      {(!error) && <div className="card mx-auto">
+      {(!error && !loading) && <div className="card mx-auto">
         <img src={`https://openweathermap.org/img/wn/${weatherImg}@2x.png`} className="card-img mx-auto" alt="Loading..." />
         <p className="card-text">
             {capDesc}
           </p>
         <div className="card-body">
-          <h2>{place}</h2>
+          <h2>{capPlace}</h2>
           <h5 className="card-title">{`Temperature : ${temperature}℃`}</h5>
           <h5 className="card-title">{`Humidity : ${humidity}%`}</h5>
         </div>

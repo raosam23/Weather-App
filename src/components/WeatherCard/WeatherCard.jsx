@@ -22,9 +22,7 @@ export default function WeatherCard(props) {
   };
   const { place, temperature,humidity, weatherImg, desc } = props.details
   const capDesc = capitalize(desc)
-  const capPlace = capitalizeCity(place)
-  // console.log(props.details)
-  // console.log(loading)
+  const capPlace = capitalizeCity(place.trim())
 
 
   return (

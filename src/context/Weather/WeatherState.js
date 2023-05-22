@@ -9,7 +9,6 @@ const WeatherState = (props) => {
 
   const fetchWeather = async (location) => {
     try{
-        console.log(location)
         const response = await fetch(`${hostURL}/weather/getweather`, {
           method: "POST",
           headers: {

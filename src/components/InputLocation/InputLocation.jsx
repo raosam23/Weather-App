@@ -10,7 +10,6 @@ export default function InputLocation(props) {
   const context = useContext(WeatherContext)
   const {fetchWeather, error, setError, loading, setLoading} = context;
 
-  // const [loading, setLoading] = useState(false)
   const [location, setLocation] = useState("");
  
 
@@ -20,16 +19,10 @@ export default function InputLocation(props) {
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    // console.log(location)
-    console.log(location)
-    // setLoading(true)
     try{
       setLoading(true)
-      const data = await fetchWeather(location)
-      console.log(data)
+      const data = await fetchWeather(location.trim())
       setLoading(false)
-      // setLoading(false)
-      // console.log(data)
       props.setDetails({
         place : location,
         temperature : data.main.temp,
@@ -40,12 +33,9 @@ export default function InputLocation(props) {
       setError(null)
     }
     catch(err) {
-      console.log("This is the error",err)
       setError(err)
     }
     setLocation("")
-    // console.log(data.main.temp)
-    // console.log(data.main.humidity)
   };
   
   return (
@@ -72,7 +62,7 @@ export default function InputLocation(props) {
           />
         </div>
         <button type="submit" className="btn btn-outline-success my-3">
-          <span class = "btnText">Go</span>
+          <span className="btnText">Go</span>
         </button>
       </form>
     </div>

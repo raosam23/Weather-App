@@ -15,7 +15,6 @@ function App() {
     desc : ""
   }
   const [details, setDetails] = useState(initialValues)
-  console.log(details);
   return (
     <div className="App">
       <WeatherState>

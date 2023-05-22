@@ -1,11 +1,40 @@
-# Getting Started with Create React App
+# Weather-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Weather-App Frontend is the client-side component of the "Weather-App" web application. It provides the user interface for interacting with the application, displaying weather information, and allowing users to search for weather details of different locations.
+
+## Features
+  - Retrieves and displays weather information for specified locations.
+  - Interactive search functionality to search for weather by location.
+  - User-friendly interface with visually appealing design.
+  - Responsive layout for seamless usage across different devices.
+  - Utilizes API endpoints provided by the backend server.
+
+## Getting Started
+
+1. Clone the repository
+     ```bash
+      git clone https://github.com/raosam23/Weather-App.git
+
+2. Install dependencies
+     ```bash
+      cd Weather-App
+      npm install
+
+3. Configure and Start the backend server
+     - Clone repository for the server from https://github.com/raosam23/Weather-App-Backend.git
+     - Run the server
+     ```bash
+      cd Weather-App-Backend
+      node ./index.js
+
+4. Start the development server
+     ```bash
+      npm start
+ - The React frontend will be served on a development server and can be accessed in your browser at **http://localhost:3000**.
 
 ## Available Scripts
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\
